@@ -20,7 +20,8 @@ func TestTwoSum(t *testing.T) {
 	}
 	caseNum := 3
 	for i := 0; i < caseNum; i++ {
-		if ret := twoSum(tests[i], targets[i]); ret[0] != results[i][0] && ret[1] != results[i][1] {
+		ret := twoSum(tests[i], targets[i])
+		if (ret == nil) || (ret[0] != results[i][0] && ret[1] != results[i][1]) {
 			t.Fatalf("case %d fails: %v\n", i, ret)
 		}
 
